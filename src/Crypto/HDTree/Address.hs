@@ -90,6 +90,11 @@ getLtcP2PKHAddress t = LtcAddr . base58check v . hash160 . getCompressed
     where
         v = if t == MainNet then 0x30 else 0x6F
 
+getDogeP2PKHAddress :: NetworkType -> PublicKey -> DogeAddr
+getDogeP2PKHAddress t = DogeAddr . base58check v . hash160 . getCompressed
+    where
+        v = if t == MainNet then 0x1E else 0x6F
+
 data MultiSigErr = TooManyKeys
                  | MExceedsN
     deriving (Show)
