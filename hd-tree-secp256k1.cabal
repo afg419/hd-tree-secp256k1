@@ -1,10 +1,10 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.31.1.
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 027784c043d865af195fb871fc45a51e2a627f7d18aefeb69f7efeddba6f865f
+-- hash: fa4d9ecbd2a6f9c5084c1cd5d1804613327db16d18e91343e5e84d5406be3193
 
 name:           hd-tree-secp256k1
 version:        0.0.0
@@ -50,7 +50,7 @@ library
     , either
     , lens
     , memory
-    , secp256k1
+    , secp256k1-haskell
     , trifecta
   default-language: Haskell2010
 
@@ -84,6 +84,6 @@ test-suite spec
     , lens
     , memory
     , safe
-    , secp256k1
+    , secp256k1-haskell
     , trifecta
   default-language: Haskell2010

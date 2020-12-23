@@ -22,7 +22,7 @@ dependencies:
   - cryptonite
   - lens
   - memory
-  - secp256k1
+  - secp256k1-haskell
   - trifecta
   - either
 

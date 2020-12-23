@@ -15,7 +15,7 @@
 # resolver:
 #  name: custom-snapshot
 #  location: "./custom-snapshot.yaml"
-resolver: lts-11.5
+resolver: lts-16.26
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -41,8 +41,8 @@ packages:
 # (e.g., acme-missiles-0.3)
 extra-deps:
 - base58-bytestring-0.1.0
-- secp256k1-0.5.2
-- hspec-2.4.8
+- secp256k1-haskell-0.5.0
+- hspec-2.7.4
 
 # Override default flag values for local packages and extra-deps
 # flags: {}
