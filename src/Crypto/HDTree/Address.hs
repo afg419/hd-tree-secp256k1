@@ -99,6 +99,10 @@ getBtcP2PKHAddress :: NetworkType -> PublicKey -> BtcAddr
 getBtcP2PKHAddress t = BtcAddr . base58check v . hash160 . getCompressed
     where v = if t == MainNet then 0x00 else 0x6F
 
+getDogeP2PKHAddress :: NetworkType -> PublicKey -> DogeAddr
+getDogeP2PKHAddress t = DogeAddr . base58check v . hash160 . getCompressed
+    where v = if t == MainNet then 0x1E else 0x71
+
 getLtcP2PKHAddress :: NetworkType -> PublicKey -> LtcAddr
 getLtcP2PKHAddress t = LtcAddr . base58check v . hash160 . getCompressed
     where v = if t == MainNet then 0x30 else 0x6F
@@ -117,6 +121,12 @@ getBtcMultiSigAddressMain
 getBtcMultiSigAddressMain t ps m =
     BtcAddr . base58check v . hash160 <$> getBtcMultiSigScript ps m
     where v = if t == MainNet then 0x05 else 0xC4
+
+getDogeMultiSigAddressMain
+    :: NetworkType -> [PublicKey] -> Word8 -> Either MultiSigErr DogeAddr
+getDogeMultiSigAddressMain t ps m =
+    DogeAddr . base58check v . hash160 <$> getBtcMultiSigScript ps m
+    where v = if t == MainNet then 0x16 else 0xC4
 
 getLtcMultiSigAddressMain
     :: NetworkType -> [PublicKey] -> Word8 -> Either MultiSigErr LtcAddr
